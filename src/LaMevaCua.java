@@ -10,8 +10,13 @@ public class LaMevaCua<E>  implements Queue<E> {
 
     @Override
     public E pop() throws EmptyQueueException {
-        return null;
-    }
+        if(isEmpty()) throw EmptyQueueException;
+        E primer = elems[0];
+        //desplaçament esquerra
+
+        this.p--;
+        return primer;
+        }
 
     @Override
     public int size() {
