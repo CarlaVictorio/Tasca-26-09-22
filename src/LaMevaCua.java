@@ -9,11 +9,16 @@ public class LaMevaCua<E>  implements Queue<E> {
         if(isFull()) throw new FullQueueException();
         elems[p++] = e;
     }
+
     @Override
     public E pop() throws EmptyQueueException {
+        if(isEmpty()) throw EmptyQueueException;
+        E primer = elems[0];
+        //desplaçament esquerra
 
-        return null;
-    }
+        this.p--;
+        return primer;
+        }
 
     @Override
     public int size() {
