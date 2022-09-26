@@ -6,15 +6,17 @@ public class LaMevaCua<E>  implements Queue<E> {
     @Override
     public void push(E e) throws FullQueueException {
 
+        if(isFull()) throw new FullQueueException();
+        elems[p++] = e;
     }
-
     @Override
     public E pop() throws EmptyQueueException {
+
         return null;
     }
 
     @Override
     public int size() {
-        return 0;
+        return this.p;
     }
 }
